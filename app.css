@@ -1,0 +1,231 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+}
+body {
+  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: hsl(229, 57%, 11%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+main::before {
+  content: "";
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  background-image: url(./images/bg-desktop.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: 50%;
+  left: 0%;
+  z-index: -1;
+}
+.container {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.card1 {
+  width: 30%;
+  height: 40%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 50%;
+  max-width: 250px;
+  max-height: 180px;
+  background-color: hsl(228, 56%, 26%);
+  margin-right: 2rem;
+}
+.Logo {
+  width: 102px;
+  height: 32px;
+  margin-left: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+.icons {
+  margin-left: 2rem;
+}
+.icon {
+  background-color: hsl(229, 57%, 11%);
+  padding: 10px;
+  width: 2.8rem;
+  height: 2.8rem;
+  margin-right: 0.5rem;
+  border-radius: 10px;
+}
+.card2 {
+  max-width: 600px;
+  max-height: 140px;
+  width: 60%;
+  height: 30%;
+  margin-top: 2.7rem;
+  background-color: hsl(228, 56%, 26%);
+  border-radius: 10px;
+  position: relative;
+}
+.tooltip {
+  width: max-content;
+  height: max-content;
+  background-color: hsl(243, 100%, 93%);
+  position: absolute;
+  top: -20%;
+  left: 65%;
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+  margin-right: 2rem;
+}
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 71%;
+  left: 85.5%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 20px 15px 0;
+  border-color: transparent hsl(243, 100%, 93%) transparent transparent;
+}
+.data {
+  font-size: 2rem;
+  color: hsl(229, 57%, 11%);
+  font-weight: 700;
+}
+.dataText {
+  font-size: 0.8rem;
+  color: hsl(229, 7%, 55%);
+  font-weight: 700;
+}
+.usedData {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: white;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.usedData1 {
+  font-weight: 700;
+}
+.progress-container {
+  width: 90%;
+  height: 1.5em;
+  background-color: hsl(229, 57%, 11%);
+  margin-left: 2rem;
+  position: relative;
+}
+.progress-bar {
+  border-radius: 16px !important;
+  position: absolute;
+}
+.progress-container1 {
+  width: 70%;
+  height: 1.5em;
+  display: inline-block;
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    hsl(6, 100%, 80%) 0%,
+    hsl(335, 100%, 65%) 35%
+  );
+  margin-left: 2rem;
+}
+.progress-bar1 {
+  border-radius: 16px !important;
+  position: absolute;
+}
+.progress-bar1::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 95%;
+  background-color: white;
+  border-radius: 50%;
+}
+.progress-bar1::before {
+  content: "0 GB";
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  top: 0;
+  margin-top: 30px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.progress-bar::after {
+  content: "1000 GB";
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  left: 90%;
+  margin-top: 30px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+}
+@media screen and (max-width: 765px) {
+  .container {
+    flex-direction: column;
+  }
+  main::before {
+    background-image: url(./images/bg-mobile.png);
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .card1 {
+    width: 90%;
+    height: 40%;
+    max-width: 450px;
+    margin: auto auto;
+    margin-bottom: 10px;
+  }
+  .card2 {
+    width: 90%;
+    height: 40%;
+    max-height: 400px;
+    max-width: 450px;
+    margin: auto auto;
+    margin-top: 10px;
+  }
+  .progress-container {
+    width: 70%;
+  }
+  .progress-container1 {
+    width: 55%;
+  }
+  .progress-bar1::after {
+    left: 90%;
+  }
+  .tooltip {
+    top: 85%;
+    left: 25%;
+  }
+  .tooltip::after {
+    display: none;
+  }
+}
